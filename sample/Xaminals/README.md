@@ -1,7 +1,7 @@
 
 # Xamarin Project Sample
 
-This sample demonstrates how to use CSharp Obfuscator to obfuscate a Xamarin solution. The solution is copied from the [Xamarin.Forms code samples repository](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals)
+This sample demonstrates how to use CSharp Obfuscator to obfuscate a Xamarin solution. The solution is copied from the [Xamarin.Forms Samples](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals) repository
 
 ## Steps to obfuscate
 
