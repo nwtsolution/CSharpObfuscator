@@ -8,7 +8,7 @@ CSharp Obfuscator obfuscates your source code, so you can run full quality assur
 
 ![flow](img/flow.gif?raw=true)
 
-It can be seamlessly integrated with the exising development cycle when each c# project only targets one framework. If a c# project targets multiple framework, you need obfuscate the project for each framework seperately. 
+It can be seamlessly integrated with the existing development cycle when each c# project only targets one framework. If a c# project targets multiple framework, you need obfuscate the project for each framework seperately. 
 
 ### Versions
 
