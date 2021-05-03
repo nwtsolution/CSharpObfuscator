@@ -1,0 +1,5 @@
+/**/*.orig
+**/bin/**
+**/obj**
+**/AppPackages/**
+**/.vs/**
