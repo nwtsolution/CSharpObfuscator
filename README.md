@@ -1,20 +1,36 @@
 # CSharp Obfuscator
  CSharp Obfuscator protects your .NET application code through obfuscation transforms, while maintaining debugging abilities for quality assurance testing. This is made possible by the [Roslyn](https://github.com/dotnet/roslyn) open source project. 
- 
+
+## Features 
+### Renaming
+Rename obfuscation applies trivial names, as short as a single character, to methods, variables, classes, and fields that allow code readability.
 ![obfuscation](img/cso.png?raw=true)
 
-### Integrate with the existing development cycle
+### Scrambling Strings
+CSharp Obfuscator extracts all strings and puts them in a seperate source file. All strings are serialized and encoded, which blocks the hacker from locating the critical method by searching for keyword strings. For further protection, you can encrypt the strings using your unique key.
+
+#### Before
+![string1](img/string1.png?raw=true)
+
+#### After
+![string2](img/string2.png?raw=true)
+
+#### string file
+![string3](img/string3.png?raw=true)
+
+## Integrate with the existing development cycle
 CSharp Obfuscator obfuscates your source code, so you can run full quality assurance tests even after your source code has been obfuscated, ensuring that your code is both tested and protected. It will also update Xamarin XAML files with the obfuscated code.
 
 ![flow](img/flow.gif?raw=true)
 
-It can be seamlessly integrated with the existing development cycle when each c# project only targets one framework. If a c# project targets multiple framework, you need obfuscate the project for each framework seperately. 
+It can be seamlessly integrated with the exising development cycle when each c# project only targets one framework. If a c# project targets multiple framework, you need obfuscate the project for each framework seperately. 
 
-### Versions
+
+## Versions
 
 Both free and premium versions are available. Please check [NorWest Solution](https://www.nwtsolution.com/cso.html) for details.
 
-### Command Line
+## Command Line
 
     Usage: cso.exe [MSBuild options] [Options]
         
@@ -47,44 +63,27 @@ Reuse|true|Save the obfuscation result into a file (cso.db). Reuse the file for 
 
 Use rules to skip the obfuscation of matched declarations. Use the following format to define a rule:
 
-    keep {declaration type} pattern
+    keep {type} {pattern}
     
 A pattern should be the fullname of a declaration and can use an asterisk (*) as the wildcard, such as
 
     keep namespace *.Tests
 
 ##### Available rules
-
-    #keep declarations within the matched namespace
-    keep namespace FullNameOfNamespace
-
-    #keep the namespace name only
-    keep namespace:name FullNameOfNamespace
+Name | Note
+-----|-------
+project| skip processing matched projects
+file:string| does not extract strings from matched files
+namespace| keep declarations within the matched namespace
+namespace:name| keep the namespace name only
+type| keep declarations within the matched type, it could be a class, enum or interface
+type:name| keep the type name only
+method| keep declaration within the matched method
+method:name| keep the method name only
+method:parameter| keep method parameters
+property| keep property
+variable| keep field variable 
+enum:value| keep values of an enum
+any| comma separated word, does not support wildcard
     
-    #keep declarations within the matched type, it could be a class, enum or interface
-    keep type FullNameOfType
-    
-    #keep the type name only
-    keep type:name FullNameOfType
-    
-    #keep declaration within the matched method
-    keep method FullNameOfMethod
-    
-    #keep the method name only
-    keep method:name FullNameOfMethod
-    
-    #keep method parameters
-    keep method:parameter FullNameOfMethod
-    
-    #keep property
-    keep property FullNameOfProperty
-    
-    #keep field variable 
-    keep variable FullNameOfVariable
-    
-    #keep values of an enum
-    keep enum:value FullNameOfEnum
-    
-    #does not support wildcard
-    keep any CommaSeparatedWords
 
