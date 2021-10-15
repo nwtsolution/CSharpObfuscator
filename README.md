@@ -58,6 +58,7 @@ ASCII|comma separated word list| Use ASCII characters for the matched declaratio
 Suffix| any letter that is allowed to be used as a declaration name| The suffix of an obfuscated declaration.  
 Prefix| any letter that is allowed to be used as a declaration name| The prefix of an obfuscated declaration.  
 Reuse|true|Save the obfuscation result into a file (cso.db). Reuse the file for your next obfuscation.
+Extension| path of the extension assembly|Use the extension assembly to encrypt strings. 
 
 #### Rules
 
