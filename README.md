@@ -18,6 +18,13 @@ CSharp Obfuscator extracts all strings and puts them in a seperate source file. 
 #### string file
 ![string3](img/string3.png?raw=true)
 
+#### Encrypt strings with an extension DLL
+
+- Download [the extension project](https://github.com/nwtsolution/CSharpObfuscator/tree/main/csoextension)
+- Implement the encryption in the EncodeStringArray method
+- Return the full name of the decryption method that exists in your project/solution
+- Build the project and set the file path in the configuration file
+
 ## Integrate with the existing development cycle
 CSharp Obfuscator obfuscates your source code, so you can run full quality assurance tests even after your source code has been obfuscated, ensuring that your code is both tested and protected. It will also update Xamarin XAML files with the obfuscated code.
 
