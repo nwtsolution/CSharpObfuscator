@@ -8,6 +8,7 @@ namespace CSharpObfuscator.Extension
     {
         public static string EncodeStringArray(string project, string[] array)
         {   
+            //implement your own encryption and encoding
             using (var ms = new MemoryStream())
             {
                 new BinaryFormatter().Serialize(ms, array);
@@ -16,6 +17,7 @@ namespace CSharpObfuscator.Extension
         }
         public static string GetDecodeToStringArrayMethodName(string project)
         {
+            //the full name of the decoding method in your project
             return "CSharpObfuscator.Utility.StringHelpers.DecodeToStringArray";
         }
     }
